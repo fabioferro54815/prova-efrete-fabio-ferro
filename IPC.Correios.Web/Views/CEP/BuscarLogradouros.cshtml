@@ -1,0 +1,19 @@
+﻿<h2>Buscar Logradouros</h2>
+
+<form method="get" action="/CEP/BuscarCEP">
+    <div class="mb-3">
+        <label for="Logradouro" class="form-label">Logradouro:</label>
+        <select id="Logradouro" name="logradouro" class="form-select">
+            <option selected>Open this select menu</option>
+            @foreach (var logradouro in Model)
+            {
+                <option value="@logradouro.CodigoLogradouro">@logradouro.NomeCompleto</option>
+            }
+        </select>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" class="btn btn-primary btn-lg" id="button-addon2" value="Buscar" />
+    </div>
+</form>
+

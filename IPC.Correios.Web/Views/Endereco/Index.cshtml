@@ -1,0 +1,33 @@
+﻿<h2>Buscar Endereço</h2>
+
+<form method="get" action="/Endereco/BuscarEndereco">
+    <div class="row">
+        <label for="cep" class="form-label">Digite o CEP:</label>
+        <input id="cep" type="text" class="form-control" placeholder="00000-000" maxlength="8" name="cep" onkeypress="return somenteNumeros(event)" required/>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" class="btn btn-primary btn-lg" id="button-addon2" value="Buscar" onclick="return verificarQuantidadeInput()" />
+    </div>
+</form>
+
+<script>
+    function somenteNumeros(event) {
+
+        var ASCIICode = (event.which) ? event.which : event.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+
+    function verificarQuantidadeInput() {
+        var input = document.getElementById("cep");
+
+        if (input.value.length < 8 || input.value.length > 8) {
+            alert("Quantidade de caracteres inválida!");
+            return false;
+        }
+
+        return true;
+    }
+</script>

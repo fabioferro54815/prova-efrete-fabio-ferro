@@ -1,0 +1,19 @@
+﻿<h2>Buscar Municipio</h2>
+
+<form method="get" action="/CEP/BuscarLogradouros">
+    <div class="mb-3">
+        <label for="Municipio" class="form-label">Municipio:</label>
+        <select id="Municipio" name="municipio" class="form-select">
+            <option selected>Open this select menu</option>
+            @foreach (var municipio in Model)
+            {
+                <option value="@municipio.CodigoMunicipio">@municipio.Nome</option>
+            }
+        </select>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" class="btn btn-primary btn-lg" id="button-addon2" value="Buscar" />
+    </div>
+</form>
+

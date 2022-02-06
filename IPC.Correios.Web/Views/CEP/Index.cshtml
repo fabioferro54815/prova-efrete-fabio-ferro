@@ -1,0 +1,18 @@
+﻿<h2>Buscar CEP</h2>
+
+<form method="get" action="/CEP/BuscarMunicipios">
+    <div class="mb-3">
+        <label for="Estado" class="form-label">Estado:</label>
+        <select id="Estado" name="estado" class="form-select">
+            <option selected>Open this select menu</option>
+            @foreach (var estado in Model)
+            {
+                <option value="@estado.Sigla">@estado.Sigla</option>
+            }
+        </select>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" class="btn btn-primary btn-lg" id="button-addon2" value="Buscar" />
+    </div>
+</form>
